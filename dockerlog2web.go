@@ -78,7 +78,7 @@ func main() {
 		}
 	}()
 
-	htmlFile, err := os.Open("website.html")
+	htmlFile, err := os.Open("website.gohtml")
 	if err != nil {
 		panic(err)
 	}
