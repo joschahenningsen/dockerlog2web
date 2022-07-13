@@ -83,7 +83,8 @@
 <script>
     let following = true;
     const logs = document.getElementById('logs');
-    let socket = new WebSocket('ws://localhost:8080/ws');
+    const wsProto = window.location.protocol === "https:" ? `wss://` : `ws://`;
+    let socket = new WebSocket(wsProto + window.location.host+ '/ws');
     socket.onmessage = function (event) {
         logs.innerHTML += '<p style="white-space: nowrap">' + event.data + '</p>';
         if (following) {
