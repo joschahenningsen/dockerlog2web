@@ -51,7 +51,7 @@ func main() {
 	go func() {
 		for {
 			msg := <-line
-			msg = string(ansihtml.ConvertToHTML([]byte(msg))[1:])
+			msg = string(ansihtml.ConvertToHTML([]byte(msg)))
 			clean := strings.Map(func(r rune) rune {
 				if unicode.IsGraphic(r) {
 					return r
